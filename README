@@ -1,0 +1,19 @@
+This is the start of a Django app I'm working on as a hobby to collect
+FourSquare user data from authenticated users. It relies on the very
+useful djangofoursquare app, which you can find here:
+http://github.com/gabesmed/djangofoursquare
+
+Where it differs from djangofoursquare is that it does not
+automatically hitch FourSquare users to users in your Auth install.
+(If that's what you're looking for, you just want djangofoursquare.)
+
+Like djangofoursquare, my app assumes you have a FOURSQUARE_CONSUMER_KEY
+and a FOURSQUARE_CONSUMER_SECRET specified in your settings.py. You
+also need to have 'foursquare' in your INSTALLED_APPS, although you do
+not need to have djangofoursquare in your INSTALLED_APPS (my app
+just imports the appropriate stuff).
+
+The app is presented here in the context of a generic 'myproject,'
+mostly because that's how I'm working on it. That said, I'm making
+every effort to make my app as pluggable as possible once it's
+ready to do ... whatever it is I decide it's going to do.

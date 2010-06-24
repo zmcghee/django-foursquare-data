@@ -1,0 +1,14 @@
+<html>
+<head>
+<title>Quadrant demo</title>
+</head>
+<body>
+<h1>Quadrant demo</h1>
+{% ifequal notice None %}
+<p><a href="{% url foursquare_oauth_auth %}">Authenticate your FourSquare account</a> for use with this app</p>
+{% else %}
+<p>{{ notice }}</p>
+{% endifequal %}
+<p><a href="{% url load_user_history %}">Load recent check-ins</a> of all authenticated users into the database</p>
+</body>
+</html>
