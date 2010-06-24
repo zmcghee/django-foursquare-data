@@ -7,7 +7,7 @@ class User(models.Model):
 	photo = models.URLField()
 	gender = models.CharField(max_length=6)
 	email = models.EmailField()
-	phone = models.CharField(max_length=10,blank=True,null=True)
+	phone = models.CharField(max_length=20,blank=True,null=True)
 	access_token = models.TextField(blank=True)
 	
 	def __unicode__(self):
@@ -36,7 +36,7 @@ class Venue(models.Model):
 	zip = models.IntegerField(max_length=5)
 	geolat = models.CharField(max_length=20)
 	geolong = models.CharField(max_length=20)
-	phone = models.IntegerField(blank=True,null=True)
+	phone = models.CharField(max_length=20,blank=True,null=True)
 	
 	def __unicode__(self):
 		return "%s" % (self.name)
