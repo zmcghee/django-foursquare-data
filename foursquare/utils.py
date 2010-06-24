@@ -33,10 +33,11 @@ def save_history_to_database(users):
 			# Add primary category to database
 			try:
 				category = foursquare.Category.objects.get(id=checkin['venue']['primarycategory']['id'])
-			except NameError:
-				continue
 			except:
-				category = foursquare.Category(id=checkin['venue']['primarycategory']['id'])
+				try:
+					category = foursquare.Category(id=checkin['venue']['primarycategory']['id'])
+				except KeyError:
+					continue # this probably isn't a proper check-in
 			category.fullpathname = checkin['venue']['primarycategory']['fullpathname']
 			category.nodename = checkin['venue']['primarycategory']['nodename']
 			category.iconurl = checkin['venue']['primarycategory']['iconurl']
